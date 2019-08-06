@@ -216,8 +216,7 @@ export class Map extends React.Component {
       if (!(center instanceof google.maps.LatLng)) {
         center = new google.maps.LatLng(center.lat, center.lng);
       }
-      // map.panTo(center)
-      map.setCenter(center);
+      map.panTo(center);
       maps.event.trigger(map, 'recenter');
     }
   }
