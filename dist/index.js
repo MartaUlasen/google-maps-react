@@ -5,22 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Map = exports.Circle = exports.Polyline = exports.Polygon = exports.HeatMap = exports.InfoWindow = exports.Marker = exports.GoogleApiWrapper = undefined;
 
-var _index = require('e:\\Marta\\Project\\google-maps-react\\node_modules\\redbox-react\\lib\\index.js');
-
-var _index2 = _interopRequireDefault(_index);
-
-var _index3 = require('e:\\Marta\\Project\\google-maps-react\\node_modules\\react-transform-catch-errors\\lib\\index.js');
-
-var _index4 = _interopRequireDefault(_index3);
-
-var _react2 = require('react');
-
-var _react3 = _interopRequireDefault(_react2);
-
-var _index5 = require('e:\\Marta\\Project\\google-maps-react\\node_modules\\react-transform-hmr\\lib\\index.js');
-
-var _index6 = _interopRequireDefault(_index5);
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _GoogleApiComponent = require('./GoogleApiComponent');
@@ -86,6 +70,10 @@ Object.defineProperty(exports, 'Circle', {
   }
 });
 
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -106,32 +94,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _components = {
-  Map: {
-    displayName: 'Map'
-  }
-};
-
-var _eMartaProjectGoogleMapsReactNode_modulesReactTransformHmrLibIndexJs2 = (0, _index6.default)({
-  filename: 'src/index.js',
-  components: _components,
-  locals: [module],
-  imports: [_react3.default]
-});
-
-var _eMartaProjectGoogleMapsReactNode_modulesReactTransformCatchErrorsLibIndexJs2 = (0, _index4.default)({
-  filename: 'src/index.js',
-  components: _components,
-  locals: [],
-  imports: [_react3.default, _index2.default]
-});
-
-function _wrapComponent(id) {
-  return function (Component) {
-    return _eMartaProjectGoogleMapsReactNode_modulesReactTransformHmrLibIndexJs2(_eMartaProjectGoogleMapsReactNode_modulesReactTransformCatchErrorsLibIndexJs2(Component, id), id);
-  };
-}
-
 var mapStyles = {
   container: {
     position: 'absolute',
@@ -149,7 +111,7 @@ var mapStyles = {
 
 var evtNames = ['ready', 'click', 'dragend', 'recenter', 'bounds_changed', 'center_changed', 'dblclick', 'dragstart', 'heading_change', 'idle', 'maptypeid_changed', 'mousemove', 'mouseout', 'mouseover', 'projection_changed', 'resize', 'rightclick', 'tilesloaded', 'tilt_changed', 'zoom_changed'];
 
-var Map = exports.Map = _wrapComponent('Map')(function (_React$Component) {
+var Map = exports.Map = function (_React$Component) {
   _inherits(Map, _React$Component);
 
   function Map(props) {
@@ -356,9 +318,9 @@ var Map = exports.Map = _wrapComponent('Map')(function (_React$Component) {
 
       if (!children) return;
 
-      return _react3.default.Children.map(children, function (c) {
+      return _react2.default.Children.map(children, function (c) {
         if (!c) return;
-        return _react3.default.cloneElement(c, {
+        return _react2.default.cloneElement(c, {
           map: _this6.map,
           google: _this6.props.google,
           mapCenter: _this6.state.currentLocation
@@ -374,10 +336,10 @@ var Map = exports.Map = _wrapComponent('Map')(function (_React$Component) {
 
       var containerStyles = Object.assign({}, mapStyles.container, this.props.containerStyle);
 
-      return _react3.default.createElement(
+      return _react2.default.createElement(
         'div',
         { style: containerStyles, className: this.props.className },
-        _react3.default.createElement(
+        _react2.default.createElement(
           'div',
           { style: style, ref: 'map' },
           'Loading map...'
@@ -388,7 +350,7 @@ var Map = exports.Map = _wrapComponent('Map')(function (_React$Component) {
   }]);
 
   return Map;
-}(_react3.default.Component));
+}(_react2.default.Component);
 
 Map.propTypes = {
   google: _propTypes2.default.object,
